@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/cloudy-bg.jpg" type="Texture" id=1]
+[ext_resource path="res://fonts/Calibri.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 2 )
+
+[node name="Login" type="Node2D"]
+
+[node name="cloudy-bg" type="Sprite" parent="."]
+position = Vector2( 0.0716553, 0.622925 )
+scale = Vector2( 1.50892, 1.50892 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="SubmitButton" type="Button" parent="."]
+margin_left = 613.646
+margin_top = 409.0
+margin_right = 756.646
+margin_bottom = 475.0
+custom_fonts/font = SubResource( 1 )
+text = "Login"
+
+[node name="UserIDInput" type="TextEdit" parent="."]
+margin_left = 626.0
+margin_top = 317.0
+margin_right = 1016.0
+margin_bottom = 383.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 410.033
+margin_top = 316.0
+margin_right = 613.033
+margin_bottom = 376.0
+custom_fonts/font = SubResource( 3 )
+text = "User ID:"
+
+[node name="Title" type="Label" parent="."]
+margin_left = 324.255
+margin_top = 177.395
+margin_right = 1045.26
+margin_bottom = 277.395
+custom_fonts/font = SubResource( 4 )
+text = "Login"
+align = 1
