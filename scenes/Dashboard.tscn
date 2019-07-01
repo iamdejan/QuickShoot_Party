@@ -73,10 +73,10 @@ custom_fonts/font = SubResource( 3 )
 text = "User Name:"
 
 [node name="RoomLabel" type="Label" parent="."]
-margin_left = 56.6924
-margin_top = 348.96
-margin_right = 439.692
-margin_bottom = 408.96
+margin_left = 61.9766
+margin_top = 349.871
+margin_right = 444.977
+margin_bottom = 409.871
 custom_fonts/font = SubResource( 3 )
 text = "Room Capacity:"
 
@@ -90,10 +90,10 @@ text = "or"
 align = 1
 
 [node name="RoomCapacity" type="TextEdit" parent="."]
-margin_left = 62.0
-margin_top = 414.219
+margin_left = 65.0
+margin_top = 414.0
 margin_right = 392.0
-margin_bottom = 493.219
+margin_bottom = 493.0
 custom_fonts/font = SubResource( 3 )
 
 [node name="MaxLabel" type="Label" parent="."]
