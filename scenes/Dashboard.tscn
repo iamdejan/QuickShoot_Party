@@ -89,11 +89,11 @@ custom_fonts/font = SubResource( 3 )
 text = "or"
 align = 1
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="RoomCapacity" type="TextEdit" parent="."]
 margin_left = 62.0
-margin_top = 415.0
+margin_top = 414.219
 margin_right = 392.0
-margin_bottom = 494.0
+margin_bottom = 493.219
 custom_fonts/font = SubResource( 3 )
 
 [node name="MaxLabel" type="Label" parent="."]
