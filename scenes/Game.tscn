@@ -1,3 +1,44 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/cloudy-bg.jpg" type="Texture" id=1]
+[ext_resource path="res://fonts/Calibri.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 2 )
 
 [node name="Game" type="Node2D"]
+
+[node name="cloudy-bg" type="Sprite" parent="."]
+position = Vector2( -1.33298, -1.46729 )
+scale = Vector2( 1.51001, 1.51001 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="MyTimeLabel" type="Label" parent="."]
+margin_left = -1.0
+margin_right = 419.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 1 )
+text = "Your Time:"
+
+[node name="OpponentTimeLabel" type="Label" parent="."]
+margin_left = 872.0
+margin_right = 1264.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 1 )
+text = "...'s Time:"
+align = 2
+
+[node name="Label" type="Label" parent="."]
+margin_left = 4.0
+margin_top = 280.0
+margin_right = 1280.0
+margin_bottom = 380.0
+custom_fonts/font = SubResource( 2 )
+text = "Time Left: ...s"
+align = 1
