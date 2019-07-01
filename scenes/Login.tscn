@@ -36,9 +36,9 @@ custom_fonts/font = SubResource( 1 )
 text = "Login"
 
 [node name="UserIDInput" type="TextEdit" parent="."]
-margin_left = 626.0
-margin_top = 317.0
-margin_right = 1016.0
+margin_left = 624.884
+margin_top = 314.0
+margin_right = 1014.88
 margin_bottom = 383.0
 custom_fonts/font = SubResource( 2 )
 
