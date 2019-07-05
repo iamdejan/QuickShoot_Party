@@ -54,9 +54,9 @@ text = "Login"
 
 [node name="RegisterButton" type="Button" parent="."]
 margin_left = 673.619
-margin_top = 292.282
+margin_top = 293.424
 margin_right = 884.619
-margin_bottom = 358.282
+margin_bottom = 359.424
 rect_pivot_offset = Vector2( 40.3698, 18.511 )
 custom_fonts/font = SubResource( 3 )
 text = "Register"
