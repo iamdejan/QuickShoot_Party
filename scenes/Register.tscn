@@ -29,37 +29,53 @@ scale = Vector2( 1.50892, 1.50892 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="RegisterButton" type="Button" parent="."]
-margin_left = 568.538
+[node name="SubmitButton" type="Button" parent="."]
+margin_left = 520.554
 margin_top = 408.591
-margin_right = 779.538
+margin_right = 731.554
 margin_bottom = 474.591
 custom_fonts/font = SubResource( 1 )
 text = "Register"
 
-[node name="RegisterInput" type="TextEdit" parent="."]
-margin_left = 625.0
+[node name="RegisterText" type="TextEdit" parent="."]
+margin_left = 577.016
 margin_top = 317.0
-margin_right = 1112.0
+margin_right = 1064.02
 margin_bottom = 383.0
 custom_fonts/font = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 303.899
+margin_left = 255.915
 margin_top = 315.531
-margin_right = 593.899
+margin_right = 545.915
 margin_bottom = 375.531
 custom_fonts/font = SubResource( 3 )
 text = "Your Name:"
 
+[node name="ErrorLabel" type="Label" parent="."]
+margin_top = 516.0
+margin_right = 1283.0
+margin_bottom = 576.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+
 [node name="Title" type="Label" parent="."]
-margin_left = 324.255
+margin_left = 276.271
 margin_top = 177.395
-margin_right = 1045.26
+margin_right = 997.276
 margin_bottom = 277.395
 custom_fonts/font = SubResource( 4 )
 text = "Register Yourself!"
 align = 1
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
-[connection signal="pressed" from="RegisterButton" to="." method="_on_RegisterButton_pressed"]
+
+[node name="GoBackButton" type="Button" parent="."]
+margin_left = 2.73589
+margin_top = 2.95735
+margin_right = 213.736
+margin_bottom = 68.9574
+custom_fonts/font = SubResource( 1 )
+text = "Go Back"
+[connection signal="pressed" from="SubmitButton" to="." method="_on_SubmitButton_pressed"]
+[connection signal="pressed" from="GoBackButton" to="." method="_on_GoBackButton_pressed"]
