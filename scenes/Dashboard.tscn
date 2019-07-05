@@ -57,17 +57,17 @@ custom_fonts/font = SubResource( 2 )
 text = "Join Room"
 
 [node name="UserIDLabel" type="Label" parent="."]
-margin_left = 476.965
+margin_left = 344.28
 margin_top = 143.511
-margin_right = 671.965
+margin_right = 539.28
 margin_bottom = 203.511
 custom_fonts/font = SubResource( 3 )
 text = "User ID:"
 
 [node name="UserNameLabel" type="Label" parent="."]
-margin_left = 476.965
+margin_left = 344.28
 margin_top = 212.73
-margin_right = 781.965
+margin_right = 649.28
 margin_bottom = 272.73
 custom_fonts/font = SubResource( 3 )
 text = "User Name:"
@@ -103,5 +103,15 @@ margin_right = 252.0
 margin_bottom = 614.0
 custom_fonts/font = SubResource( 4 )
 text = "Up to 4 people"
+
+[node name="LogoutButton" type="Button" parent="."]
+margin_left = 4.0
+margin_top = 3.26422
+margin_right = 185.0
+margin_bottom = 69.2642
+rect_pivot_offset = Vector2( 40.3698, 18.511 )
+custom_fonts/font = SubResource( 2 )
+text = "Logout"
 [connection signal="pressed" from="CreateRoomButton" to="." method="_on_CreateRoomButton_pressed"]
 [connection signal="pressed" from="JoinRoomButton" to="." method="_on_JoinRoomButton_pressed"]
+[connection signal="pressed" from="LogoutButton" to="." method="_on_LogoutButton_pressed"]
