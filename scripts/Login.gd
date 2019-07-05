@@ -1,7 +1,14 @@
 extends Node2D
 
+func _ready():
+	$SubmitButton.disabled = false
+	pass
+
 func _on_SubmitButton_pressed():
-	#API Call will be implemented later
-	
-	get_tree().change_scene(Session.build_scene_URL("Dashboard"))
+	$SubmitButton.disabled = true
+	Session.login($UserIDText.text)
+	pass
+
+func _on_GoBackButton_pressed():
+	get_tree().change_scene(Session.build_scene_URL("Home"))
 	pass
