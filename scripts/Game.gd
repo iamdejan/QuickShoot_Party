@@ -65,10 +65,10 @@ func _process(delta):
 
 func _on_CountdownTimer_timeout():
 	is_shoot = false
-	start_time = OS.get_system_time_msecs() / 1000.0
 	$MainLabel.text = "TAP!"
 	$CountdownTimer.stop()
 	set_process(false)
+	start_time = OS.get_system_time_msecs() / 1000.0
 	pass
 
 func _input(event):
