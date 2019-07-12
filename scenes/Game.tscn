@@ -81,10 +81,10 @@ align = 1
 [node name="CountdownTimer" type="Timer" parent="."]
 
 [node name="LeaveButton" type="Button" parent="."]
-margin_left = 587.958
-margin_top = 654.394
-margin_right = 717.958
-margin_bottom = 711.394
+margin_left = 569.083
+margin_top = 654.0
+margin_right = 699.083
+margin_bottom = 711.0
 custom_fonts/font = SubResource( 3 )
 text = "Leave"
 

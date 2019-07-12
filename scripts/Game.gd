@@ -70,6 +70,9 @@ func handle_notifs(notifications: Array):
 					$MainLabel.text = "You WIN!"
 				else:
 					$MainLabel.text = "You LOSE!"
+				
+				$LeaveButton.text = "Go Back"
+				$LeaveButton.disabled = false
 		pass
 
 func _on_NotifHTTPRequest_request_completed(result, response_code, headers, body):
@@ -119,8 +122,13 @@ func _input(event):
 
 func _on_LeaveButton_pressed():
 	$LeaveButton.disabled = true
-	$LeaveHTTPRequest.request(Session.URL + "/room/" + String(room_data["ID"]) + "/member/" + String(Session.user_data["id"]),
-							  [], false, HTTPClient.METHOD_DELETE)
+	if game_ends != true:
+		$LeaveHTTPRequest.request(Session.URL + "/room/" + String(room_data["ID"]) + "/member/" + String(Session.user_data["id"]),
+						  		  [],
+								  false,
+								  HTTPClient.METHOD_DELETE)
+	else:
+		get_tree().change_scene(Session.build_scene_URL("Dashboard"))
 	pass
 
 func _on_LeaveHTTPRequest_request_completed(result, response_code, headers, body):
