@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/cloudy-bg.jpg" type="Texture" id=2]
@@ -12,6 +12,10 @@ font_data = ExtResource( 3 )
 size = 100
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 3 )
+
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -21,36 +25,46 @@ scale = Vector2( 1.51001, 1.51001 )
 texture = ExtResource( 2 )
 centered = false
 
+[node name="RoomIDLabel" type="Label" parent="."]
+margin_left = 479.727
+margin_top = -1.0
+margin_right = 812.727
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Room ID:"
+align = 1
+
 [node name="Player0Label" type="Label" parent="."]
 margin_left = -1.0
 margin_right = 419.0
 margin_bottom = 51.0
 custom_fonts/font = SubResource( 1 )
-text = "Your Time:"
+text = "Your Name:"
 
 [node name="Player1Label" type="Label" parent="."]
-margin_left = 872.0
-margin_right = 1264.0
-margin_bottom = 51.0
+margin_left = 734.0
+margin_top = -1.0
+margin_right = 1276.0
+margin_bottom = 50.0
 custom_fonts/font = SubResource( 1 )
-text = "...'s Time:"
+text = "...'s Name:"
 align = 2
 
 [node name="Player2Label" type="Label" parent="."]
 margin_left = -1.0
-margin_top = 658.18
+margin_top = 667.18
 margin_right = 419.0
-margin_bottom = 709.18
+margin_bottom = 718.18
 custom_fonts/font = SubResource( 1 )
-text = "...'s Time:"
+text = "...'s Name:"
 
 [node name="Player3Label" type="Label" parent="."]
-margin_left = 872.0
-margin_top = 663.838
-margin_right = 1264.0
-margin_bottom = 714.838
+margin_left = 734.0
+margin_top = 666.61
+margin_right = 1276.0
+margin_bottom = 717.61
 custom_fonts/font = SubResource( 1 )
-text = "...'s Time:"
+text = "...'s Name:"
 align = 2
 
 [node name="MainLabel" type="Label" parent="."]
@@ -65,5 +79,20 @@ align = 1
 [node name="NotifHTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="CountdownTimer" type="Timer" parent="."]
+
+[node name="LeaveButton" type="Button" parent="."]
+margin_left = 587.958
+margin_top = 654.394
+margin_right = 717.958
+margin_bottom = 711.394
+custom_fonts/font = SubResource( 3 )
+text = "Leave"
+
+[node name="LeaveHTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="ShootHTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="request_completed" from="NotifHTTPRequest" to="." method="_on_NotifHTTPRequest_request_completed"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
+[connection signal="pressed" from="LeaveButton" to="." method="_on_LeaveButton_pressed"]
+[connection signal="request_completed" from="LeaveHTTPRequest" to="." method="_on_LeaveHTTPRequest_request_completed"]
+[connection signal="request_completed" from="ShootHTTPRequest" to="." method="_on_ShootHTTPRequest_request_completed"]
