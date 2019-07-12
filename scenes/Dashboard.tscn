@@ -112,6 +112,12 @@ margin_bottom = 69.2642
 rect_pivot_offset = Vector2( 40.3698, 18.511 )
 custom_fonts/font = SubResource( 2 )
 text = "Logout"
+
+[node name="JoinHTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="CreateRoomButton" to="." method="_on_CreateRoomButton_pressed"]
 [connection signal="pressed" from="JoinRoomButton" to="." method="_on_JoinRoomButton_pressed"]
 [connection signal="pressed" from="LogoutButton" to="." method="_on_LogoutButton_pressed"]
+[connection signal="request_completed" from="JoinHTTPRequest" to="." method="_on_JoinHTTPRequest_request_completed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

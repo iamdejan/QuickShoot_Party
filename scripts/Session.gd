@@ -3,6 +3,8 @@ extends Node
 const prefix: String = "res://scenes/"
 const extension: String = "tscn"
 
+const URL = "http://localhost:8080"
+
 func build_scene_URL(key) -> String:
 	return prefix + key + "." + extension
 
@@ -10,6 +12,12 @@ const user_data = {
 	"name": "",
 	"id": -1
 }
+
+var data: Dictionary = {}
+
+func empty_data():
+	data.clear()
+	pass
 
 var scene_source: String = ""
 
