@@ -76,12 +76,13 @@ func handle_notifs(notifications: Array):
 		pass
 
 func _on_NotifHTTPRequest_request_completed(result, response_code, headers, body):
-	if response_code == 200 and is_processing() != true and game_ends != true:
+	if response_code == 200 and is_processing() != true:
 		var json = JSON.parse(body.get_string_from_utf8())
 		var data: Dictionary = json.result
 		handle_notifs(data["Notifications"])
 		last_id = int(data["LastID"])
-		get_notifs()
+		if game_ends != true:
+			get_notifs()
 	elif response_code != 200:
 		$MainLabel.text = "Oops!"
 	pass

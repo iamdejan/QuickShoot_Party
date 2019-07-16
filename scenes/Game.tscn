@@ -27,42 +27,43 @@ centered = false
 
 [node name="RoomIDLabel" type="Label" parent="."]
 margin_left = 479.727
-margin_top = -1.0
+margin_top = 3.0
 margin_right = 812.727
-margin_bottom = 50.0
+margin_bottom = 54.0
 custom_fonts/font = SubResource( 1 )
 text = "Room ID:"
 align = 1
 
 [node name="Player0Label" type="Label" parent="."]
 margin_left = -1.0
+margin_top = 4.42907
 margin_right = 419.0
-margin_bottom = 51.0
+margin_bottom = 55.4291
 custom_fonts/font = SubResource( 1 )
 text = "Your Name:"
 
 [node name="Player1Label" type="Label" parent="."]
 margin_left = 734.0
-margin_top = -1.0
+margin_top = 4.42907
 margin_right = 1276.0
-margin_bottom = 50.0
+margin_bottom = 55.4291
 custom_fonts/font = SubResource( 1 )
 text = "...'s Name:"
 align = 2
 
 [node name="Player2Label" type="Label" parent="."]
 margin_left = -1.0
-margin_top = 667.18
+margin_top = 596.315
 margin_right = 419.0
-margin_bottom = 718.18
+margin_bottom = 647.315
 custom_fonts/font = SubResource( 1 )
 text = "...'s Name:"
 
 [node name="Player3Label" type="Label" parent="."]
 margin_left = 734.0
-margin_top = 666.61
+margin_top = 595.745
 margin_right = 1276.0
-margin_bottom = 717.61
+margin_bottom = 646.745
 custom_fonts/font = SubResource( 1 )
 text = "...'s Name:"
 align = 2
