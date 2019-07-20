@@ -3,8 +3,8 @@ extends Node
 const prefix: String = "res://scenes/"
 const extension: String = "tscn"
 
-#const URL = "http://localhost:8080"
-const URL = "http://quickshoot-party-match-server.herokuapp.com"
+const URL = "http://localhost:8080"
+#const URL = "http://quickshoot-party-match-server.herokuapp.com"
 
 func build_scene_URL(key) -> String:
 	return prefix + key + "." + extension
