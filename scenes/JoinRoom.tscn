@@ -41,4 +41,7 @@ margin_top = 314.411
 margin_right = 755.156
 margin_bottom = 398.411
 custom_fonts/font = SubResource( 1 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="JoinRoomButton" to="." method="_on_JoinRoomButton_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
