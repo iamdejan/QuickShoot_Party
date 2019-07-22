@@ -8,7 +8,7 @@ var is_shoot: bool = false
 
 var room_data: Dictionary
 var maximum_capacity: int
-var start_time: float
+var start_time: float = -1.0
 var end_time: float
 
 func reset_room():
@@ -27,8 +27,8 @@ func _ready():
 	set_process(false)
 	$MainLabel.text = "Waiting..."
 	
-	room_data = Session.data["Game"]
-	maximum_capacity = Session.data["maximum_capacity"]
+	room_data = Session.data["room"]
+	maximum_capacity = room_data["maximum_capacity"]
 	Session.empty_data()
 	
 	reset_room()
@@ -101,7 +101,7 @@ func _on_CountdownTimer_timeout():
 	pass
 
 func _input(event):
-	if $CountdownTimer.time_left <= 0.0 and (event.is_action("shoot") or event is InputEventScreenTouch):
+	if start_time >= 0.0 and $CountdownTimer.time_left <= 0.0 and (event.is_action("shoot") or event is InputEventScreenTouch):
 		if is_shoot != true:
 			end_time = OS.get_system_time_msecs() / 1000.0
 			var duration: float = end_time - start_time

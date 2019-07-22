@@ -19,11 +19,11 @@ func _on_JoinRoomButton_pressed():
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if response_code == 200:
-		Session.data["Game"] = {
+		Session.data["room"] = {
 			"ID": int($RoomIDText.text)
 		}
 		var json = JSON.parse(body.get_string_from_utf8())
 		var data: Dictionary = json.result
-		Session.data["maximum_capacity"] = data["MaxMemberCount"]
+		Session.data["room"]["maximum_capacity"] = int(data["MaxMemberCount"])
 		get_tree().change_scene(Session.build_scene_URL("Game"))
 	pass

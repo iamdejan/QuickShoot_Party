@@ -14,10 +14,10 @@ const user_data = {
 	"id": -1
 }
 
-var data: Dictionary = {}
+var data: Dictionary = {"room": {}}
 
 func empty_data():
-	data.clear()
+	data = {"room": {}}
 	pass
 
 var scene_source: String = ""

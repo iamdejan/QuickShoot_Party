@@ -7,7 +7,7 @@ func _ready():
 
 func _on_CreateRoomButton_pressed():
 	var maximum_capacity: int = int($RoomCapacity.text)
-	Session.data["maximum_capacity"] = maximum_capacity
+	Session.data["room"]["maximum_capacity"] = maximum_capacity
 	var data: Dictionary = {
 		"Payload": {
 			"MaxMemberCount": maximum_capacity
@@ -35,8 +35,8 @@ func _on_LogoutButton_pressed():
 	pass
 
 func self_join():
-	var room_data: Dictionary = Session.data["Game"]
-	var maximum_capacity = Session.data["maximum_capacity"]
+	var room_data: Dictionary = Session.data["room"]
+	var maximum_capacity = room_data["maximum_capacity"]
 	
 	var data = {
 		"Payload": {
@@ -60,7 +60,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if response_code == 200:
 		var json = JSON.parse(body.get_string_from_utf8())
 		var data: Dictionary = json.result
-		Session.data["Game"] = data
+		Session.data["room"]["ID"] = data["ID"]
 		self_join()
 	pass
 
