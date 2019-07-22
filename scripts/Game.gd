@@ -84,7 +84,7 @@ func _on_NotifHTTPRequest_request_completed(result, response_code, headers, body
 		if game_ends != true:
 			get_notifs()
 	elif response_code != 200:
-		$MainLabel.text = "Oops!"
+		$MainLabel.text = "Oops! Status " + String(response_code)
 	pass
 
 func _process(delta):
